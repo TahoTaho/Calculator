@@ -8,28 +8,26 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="calculator"> Calculator 
-        <div class="calculator-screen">
-            Display Screen
-        </div>
+    <div class="calculator"> Calculator  
+        <input type="text" class="calculator-screen" value="0">
 
         <div class="calculator-numpad"> 
             <div class="calculator-numpad numeric-keys"> 
                 <div class="calculator-numpad number-keys">
-                    <button class="calculator-numpad number-key">7</button>
-                    <button class="calculator-numpad number-key">8</button>
-                    <button class="calculator-numpad number-key">9</button>
+                    <button class="calculator-numpad number-key" value="7">7</button>
+                    <button class="calculator-numpad number-key" value="8">8</button>
+                    <button class="calculator-numpad number-key" value="9">9</button>
 
-                    <button class="calculator-numpad number-key">4</button>
-                    <button class="calculator-numpad number-key">5</button>
-                    <button class="calculator-numpad number-key">6</button>
+                    <button class="calculator-numpad number-key" value="4">4</button>
+                    <button class="calculator-numpad number-key" value="5">5</button>
+                    <button class="calculator-numpad number-key" value="6">6</button>
 
-                    <button class="calculator-numpad number-key">1</button>
-                    <button class="calculator-numpad number-key">2</button>
-                    <button class="calculator-numpad number-key">3</button>
+                    <button class="calculator-numpad number-key" value="1">1</button>
+                    <button class="calculator-numpad number-key" value="2">2</button>
+                    <button class="calculator-numpad number-key" value="3">3</button>
 
-                    <button class="calculator-numpad number-key-zero">0</button>
-                    <button class="calculator-numpad decimal-key">.</button>
+                    <button class="calculator-numpad number-key" value="0" id="zero">0</button>
+                    <button class="calculator-numpad decimal-key" value=".">.</button>
                 </div>
 
                 <div class="calculator-numpad operator-keys"> 
@@ -41,12 +39,11 @@
             </div>
 
             <div class="calculator-numpad control-keys"> 
-                <button class="calculator-numpad control-key"> Clear </button>
+                <button class="calculator-numpad control-key" id="clear"> Clear </button>
                 <button class="calculator-numpad control-key"> Backspace </button>
                 <button class="calculator-numpad control-key"> = </button>
             </div>
         </div>
     </div>
-    
 </body>
 </html>
