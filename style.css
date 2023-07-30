@@ -23,9 +23,8 @@ div {
     background-color: bisque;
     flex-grow: 1;
     flex-basis: 120px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    text-align: right;
+    font-size: 30px;
 }
 
 .calculator-numpad {
@@ -34,7 +33,7 @@ div {
     flex-direction: column;
     justify-content: center;
     flex-grow: 5;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .calculator-numpad.numeric-keys {
@@ -55,15 +54,17 @@ div {
 .calculator-numpad.number-key {
     background-color: bisque;
     flex-basis: 130px;
+    align-items: center;
 }
 
-.calculator-numpad.number-key-zero {
+#zero {
     background-color: bisque;
     flex-basis: 200px;
 }
 
 .calculator-numpad.decimal-key {
     background-color: bisque;
+    align-items: center;
 }
 
 .calculator-numpad.operator-keys {
@@ -74,6 +75,7 @@ div {
 
 .calculator-numpad.operator-key {
     background-color: bisque;
+    align-items: center;
 }
 
 
@@ -86,5 +88,5 @@ div {
 
 .calculator-numpad.control-key{
     background-color: bisque;
+    align-items: center;
 }
-
