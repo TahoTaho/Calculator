@@ -3,6 +3,8 @@ const clearButton = document.getElementById('clear');
 const equalButton = document.getElementById('equal');
 const addButton = document.getElementById('add');
 const minusButton = document.getElementById('subtract');
+const multiplyButton = document.getElementById('multiply');
+const divideButton = document.getElementById('divide');
 
 let input1;
 let input2;
@@ -10,47 +12,80 @@ let selectedOperator;
 let buttonClicked = false;
 
 
-addButton.addEventListener('click', (e) => {
+addButton.addEventListener('click', () => {
     if (input1 != null && input2 === null) {
         input2 = parseInt(display.value);
-        console.log('Input2: '+input2);
+        console.log('Input1: ' + input1)
+        console.log('Input2: '+ input2);
         const result = operate(input1,input2,selectedOperator);
         display.value = result;
         input1 = result;
     }
     else {
         input1 = parseInt(display.value);
-        console.log('Input1: ' + input1);
-        console.log('Input2: ' + input2);
-        selectedOperator = '+';
+        console.log('(N)Input1: ' + input1);
+        console.log('(N)Input2: ' + input2);
     }
+    selectedOperator = '+';
     buttonClicked = true;
-    console.log('Button is clicked: ' + buttonClicked);
-
 });
 
 minusButton.addEventListener('click', () => {
-    if (input1 == null) {
-        input1 = parseInt(display.value);
-        console.log(input1);
-        console.log(input2);
-    }
-    else {
+    if (input1 != null && input2 === null) {
+        input2 = parseInt(display.value);
+        console.log('Input1: ' + input1)
+        console.log('Input2: '+ input2);
         const result = operate(input1,input2,selectedOperator);
         display.value = result;
         input1 = result;
-        input2 = null;
-
-        console.log(input1);
-        console.log(input2);
-        console.log(operate(input1,input2,selectedOperator));
     }
-    display.value = '';
+    else {
+        input1 = parseInt(display.value);
+        console.log('(N)Input1: ' + input1);
+        console.log('(N)Input2: ' + input2);
+    }
     selectedOperator = '-';
+    buttonClicked = true;
 })
 
+multiplyButton.addEventListener('click', () => {
+    if (input1 != null && input2 === null) {
+        input2 = parseInt(display.value);
+        console.log('Input1: ' + input1)
+        console.log('Input2: '+ input2);
+        const result = operate(input1,input2,selectedOperator);
+        display.value = result;
+        input1 = result;
+    }
+    else {
+        input1 = parseInt(display.value);
+        console.log('(N)Input1: ' + input1);
+        console.log('(N)Input2: ' + input2);
+    }
+    selectedOperator = '*';
+    buttonClicked = true;
+});
+
+divideButton.addEventListener('click', () => {
+    if (input1 != null && input2 === null) {
+        input2 = parseInt(display.value);
+        console.log('Input1: ' + input1)
+        console.log('Input2: '+ input2);
+        const result = operate(input1,input2,selectedOperator);
+        display.value = result;
+        input1 = result;
+    }
+    else {
+        input1 = parseInt(display.value);
+        console.log('(N)Input1: ' + input1);
+        console.log('(N)Input2: ' + input2);
+    }
+    selectedOperator = '/';
+    buttonClicked = true;
+});
+
 equalButton.addEventListener('click', () => {
-    if (input1 != null) {
+    if (input1 != null && input2 === null) {
         input2 = parseInt(display.value);
         console.log('I(=)Input2: ' + input2);
         const result = operate(input1,input2,selectedOperator);
@@ -81,8 +116,8 @@ function getButtonValue(element) {
     else if (buttonClicked === true) {
         display.value = null;
         buttonClicked = false;
-        console.log('Button is clicked: '+ buttonClicked)
         display.value += clickedButtonValue;
+        input2 = null;
     }
     else {
     display.value += clickedButtonValue;
